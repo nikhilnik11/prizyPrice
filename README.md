@@ -14,12 +14,9 @@ Running the application
     a.	Product List (FetchAllProducts) :
     
       i.	Hit http://localhost:8097/allProducts from browser or client like Postman to fetch all the products saved in DB.
-      
-          b.	Product Loader (Submit Survey Product) :
-          
-              i.	Hit a post request from Postman to http://localhost:8097/submitSurvey, add ‘Content-Type:application/json’ in the header with request body as follows :
-              
-              ii.	Product will be the object for which survey is being submitted.
+            b.	Product Loader (Submit Survey Product) :
+                 i.	Hit a post request from Postman to http://localhost:8097/submitSurvey, add ‘Content-Type:application/json’ in the header with request body as follows :
+                  ii.	Product will be the object for which survey is being submitted.
               
                     {
                         "product":{
@@ -30,18 +27,14 @@ Running the application
                       },
                         "priceByUser": "2000",
                         "notes": "Nikhil Inserted 3"
-                     }
-                     
+                     }        
           c.	Product Viewer (FetchProduct):
-          
               i.	Hit a get request using URL http://localhost:8097/product?code=12SP34, code will be the bar code of the product for                 which the details needs to be fetched.
               ii.	Initially the price will be Zero. Unless you submit some surveys first.
 
 Implementation of new Ideal price formulas
-
         1.	Whenever a new ideal price formula needs to be entered. Just make a new class implementing IIdealPriceFormula.
         2.	Change the qualifier in PriceCalculator class to the newly create class.
 Running the Tests
-
         1.	Go to com.xebia.prizy.testpricecalculator.PriceCalculatorTest class. Run as junit application.
         2.	Formulas to find average weight, lowest weight, highest weight and ideal weight as tested.
